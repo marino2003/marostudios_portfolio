@@ -1,7 +1,9 @@
+import Container from '../components/ui/Container';
+
 export default function OverMijPage() {
   return (
-    <div>
+    <Container>
       <h1>Over Mij</h1>
-    </div>
+    </Container>
   );
 }

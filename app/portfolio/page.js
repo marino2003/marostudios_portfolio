@@ -1,7 +1,9 @@
+import Container from '../components/ui/Container';
+
 export default function PortfolioPage() {
   return (
-    <div>
+    <Container>
       <h1>Portfolio</h1>
-    </div>
+    </Container>
   );
 }
