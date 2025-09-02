@@ -58,6 +58,25 @@ body {
   font-family: var(--font-inter);
 }
 
+/* Drawing animation for project title underline */
+@keyframes drawLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-draw-line {
+  animation: drawLine 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+}
+
 :root {
   --radius: 0.625rem;
   --background: #111111;

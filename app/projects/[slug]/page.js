@@ -68,19 +68,24 @@ export default async function ProjectPage({ params }) {
       <div className="min-h-screen py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Header with titles - updated styling */}
-          <FadeIn>
-            <header className="mb-16 sm:mb-24 md:mb-32 text-center">
-              <h1 className="text-5xl md:text-7xl lg:text-[140px] font-bold text-white font-inter text-transform: uppercase mb-6 sm:mb-8 md:mb-10">
-                {project.title}
-              </h1>
-              {project.subtitle && (
-                <p className="text-sm sm:text-base md:text-lg font-regular text-white mb-6 sm:mb-8 md:mb-12 max-w-4xl mx-auto font-inter leading-relaxed">
-                  {project.subtitle}
-                </p>
-              )}
-              
-              {/* Featured image with relative positioning, 1fr width, and 800px height */}
-              {project.featuredImage && (
+          <div>
+            <SlideIn direction="up" distance={30} margin="-50px 0px -50px 0px">
+              <header className="mb-16 sm:mb-24 md:mb-32 text-center flex flex-col items-center">
+                <h1 className="text-5xl md:text-7xl lg:text-[140px] font-bold text-white font-inter uppercase mb-6 sm:mb-8 md:mb-10 relative inline-block group">
+                  {project.title}
+                  <span className="absolute bottom-0 left-0 w-0 h-1.5 bg-[#C7EA46] rounded-full animate-draw-line group-hover:w-full transition-all duration-500"></span>
+                </h1>
+                {project.subtitle && (
+                  <p className="text-sm sm:text-base md:text-lg font-regular text-white mb-6 sm:mb-8 md:mb-12 max-w-4xl mx-auto font-inter leading-relaxed">
+                    {project.subtitle}
+                  </p>
+                )}
+              </header>
+            </SlideIn>
+            
+            {/* Featured image with relative positioning, 1fr width, and 800px height */}
+            {project.featuredImage && (
+              <SlideIn direction="up" distance={50} delay={0.2} margin="-50px 0px -50px 0px">
                 <div className="relative w-full h-64 sm:h-96 md:h-[800px] rounded-3xl overflow-hidden mb-32">
                   <img 
                     src={project.featuredImage} 
@@ -88,9 +93,9 @@ export default async function ProjectPage({ params }) {
                     className="w-full h-full object-cover"
                   />
                 </div>
-              )}
-            </header>
-          </FadeIn>
+              </SlideIn>
+            )}
+          </div>
           
           {/* Two-column layout: tags on left, content on right */}
           <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 mb-12 sm:mb-20 md:mb-32">

@@ -27,12 +27,12 @@ export function ProjectGallery({ images, title }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-12">
         {images && images.length > 0 ? (
           images.map((image, index) => (
             <div 
               key={index} 
-              className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden cursor-pointer group"
+              className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer group"
               onClick={() => openLightbox(index)}
             >
               <img 
@@ -44,7 +44,7 @@ export function ProjectGallery({ images, title }) {
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <svg 
-                    className="w-10 h-10 text-white" 
+                    className="w-8 h-8 sm:w-10 sm:h-10 text-white" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24" 
@@ -59,24 +59,24 @@ export function ProjectGallery({ images, title }) {
         ) : (
           // Fallback placeholder images if no gallery images are provided
           <>
-            <div className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400">Gallery Image 1</span>
+                <span className="text-gray-400 text-sm sm:text-base">Gallery Image 1</span>
               </div>
             </div>
-            <div className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400">Gallery Image 2</span>
+                <span className="text-gray-400 text-sm sm:text-base">Gallery Image 2</span>
               </div>
             </div>
-            <div className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400">Gallery Image 3</span>
+                <span className="text-gray-400 text-sm sm:text-base">Gallery Image 3</span>
               </div>
             </div>
-            <div className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400">Gallery Image 4</span>
+                <span className="text-gray-400 text-sm sm:text-base">Gallery Image 4</span>
               </div>
             </div>
           </>

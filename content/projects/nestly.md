@@ -1,6 +1,6 @@
 ---
 title: "Nestly"
-slug: "elearning-platform"
+slug: "nestly"
 featured: true
 date: "2023-05-15"
 featuredImage: "/img/projects/sample_project/Mockup.png"
