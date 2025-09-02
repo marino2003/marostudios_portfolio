@@ -56,8 +56,8 @@ export default function Hero() {
         </FadeIn>
       </div>
       
-      {/* PixelTrail overlay - covers entire section but allows pointer events through */}
-      <div className="absolute inset-0 w-full h-150 z-20 pointer-events-none">
+      {/* PixelTrail overlay - covers entire section but allows pointer events through - hidden on mobile */}
+      <div className="absolute inset-0 w-full h-150 z-20 pointer-events-none hidden sm:block">
         <div className="w-full h-150 pointer-events-none">
           <PixelTrail 
             pixelSize={20}
