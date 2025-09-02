@@ -3,7 +3,6 @@ title: "Nestly"
 slug: "elearning-platform"
 featured: true
 date: "2023-05-15"
-tech: ["Next.js", "Tailwind CSS", "MongoDB", "WebRTC"]
 featuredImage: "/img/projects/sample_project/Mockup.png"
 subtitle: "Smart Shared Household Billsplitter"
 description: "Web-based educational platform that connects students and teachers with interactive tools and real-time communication"
@@ -12,6 +11,10 @@ gallery:
   - "/img/projects/sample_project/1.png"
   - "/img/projects/sample_project/2.png"
   - "/img/projects/sample_project/3.png"
+categorie: ['UI/UX Design', 'User Research' ]
+rol: ['UI/UX Designer', 'Reseacher']
+tools: ['Figma']
+datum: ['24 Augustus 2025']
 ---
 
 # Introductie

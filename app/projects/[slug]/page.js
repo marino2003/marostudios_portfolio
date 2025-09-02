@@ -61,22 +61,22 @@ export default async function ProjectPage({ params }) {
   const sections = extractSections(project.content);
 
   return (
-    <div className="min-h-screen py-24 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header with titles - updated styling */}
-        <header className="mb-30 text-center">
+        <header className="mb-32 text-center">
           <h1 className="text-[140px] font-bold text-white  font-inter text-transform: uppercase">
             {project.title}
           </h1>
           {project.subtitle && (
-            <p className="text-lg font-regular text-white mb-30 max-w-4xl mx-auto font-inter">
+            <p className="text-lg font-regular text-white mb-32 max-w-4xl mx-auto font-inter">
               {project.subtitle}
             </p>
           )}
           
           {/* Featured image with relative positioning, 1fr width, and 800px height */}
           {project.featuredImage && (
-            <div className="relative w-full h-[800px] rounded-3xl overflow-hidden mb-16">
+            <div className="relative w-full h-[800px] rounded-3xl overflow-hidden mb-32">
               <img 
                 src={project.featuredImage} 
                 alt={project.title}
@@ -87,69 +87,69 @@ export default async function ProjectPage({ params }) {
         </header>
         
         {/* Two-column layout: tags on left, content on right */}
-        <div className="flex flex-col lg:flex-row gap-12 mb-28">
+        <div className="flex flex-col lg:flex-row gap-16 mb-32">
           {/* Left column: Tags with Details title */}
           <div className="lg:w-1/3">
-            <h2 className="text-lg font-normal text-white mb-6 text-left font-inter pl-4">Details</h2>
-            <div className="flex flex-wrap gap-3">
+            <h2 className="text-lg font-normal text-white mb-8 text-left font-inter pl-4">Details</h2>
+            <div className="space-y-6">
               {/* Categorie tags */}
               {project.categorie && project.categorie.length > 0 && (
-                project.categorie.map((cat, index) => (
-                  <span 
-                    key={index} 
-                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
-                  >
-                    {cat}
-                  </span>
-                ))
+                <div>
+                  <span className="text-white font-inter font-bold mr-2">Categorie:</span>
+                  {project.categorie.map((cat, index) => (
+                    <span 
+                      key={index} 
+                      className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold mr-2 mb-2"
+                    >
+                      {cat}
+                    </span>
+                  ))}
+                </div>
               )}
               
               {/* Rol tags */}
               {project.rol && project.rol.length > 0 && (
-                project.rol.map((role, index) => (
-                  <span 
-                    key={index} 
-                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
-                  >
-                    {role}
-                  </span>
-                ))
-              )}
-              
-              {/* Datum tags */}
-              {project.datum && project.datum.length > 0 && (
-                project.datum.map((date, index) => (
-                  <span 
-                    key={index} 
-                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
-                  >
-                    {date}
-                  </span>
-                ))
+                <div>
+                  <span className="text-white font-inter font-bold mr-2">Rol:</span>
+                  {project.rol.map((role, index) => (
+                    <span 
+                      key={index} 
+                      className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold mr-2"
+                    >
+                      {role}
+                    </span>
+                  ))}
+                </div>
               )}
               
               {/* Tools tags */}
               {project.tools && project.tools.length > 0 && (
-                project.tools.map((tool, index) => (
-                  <span 
-                    key={index} 
-                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
-                  >
-                    {tool}
-                  </span>
-                ))
+                <div>
+                  <span className="text-white font-inter font-bold mr-2">Tools:</span>
+                  {project.tools.map((tool, index) => (
+                    <span 
+                      key={index} 
+                      className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold mr-2"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
               )}
               
-              {/* Original tech tags */}
-              {project.tech && project.tech.length > 0 && (
-                project.tech.map((tech, index) => (
-                  <span 
-                    key={index} 
-                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
-                  >
-                    {tech}
-                  </span>
-                ))
+              {/* Datum tags */}
+              {project.datum && project.datum.length > 0 && (
+                <div>
+                  <span className="text-white font-inter font-bold mr-2">Datum:</span>
+                  {project.datum.map((date, index) => (
+                    <span 
+                      key={index} 
+                      className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold mr-2 old mr-2"
+                    >
+                      {date}
+                    </span>
+                  ))}
+                </div>
               )}
             </div>
           </div>
@@ -157,15 +157,15 @@ export default async function ProjectPage({ params }) {
           {/* Right column: Content sections */}
           <div className="lg:w-2/3">
             {/* Content sections - applying new styling with Inter font, white body text, and padded section titles */}
-            <div className="space-y-28">
+            <div className="space-y-32">
               {sections.map((section, index) => (
                 <section key={index} className="mb-16">
-                  <h2 className="text-lg font-normal text-white mb-6 text-left font-inter pl-4">
+                  <h2 className="text-lg font-normal text-white mb-8 text-left font-inter pl-4">
                     {section.title}
                   </h2>
                   <div className="text-white max-w-4xl text-lg font-inter">
                     {section.content.split('\n').filter(line => line.trim() !== '').map((paragraph, pIndex) => (
-                      <p key={pIndex} className="mb-6 leading-relaxed">
+                      <p key={pIndex} className="mb-8 leading-relaxed">
                         {paragraph}
                       </p>
                     ))}
@@ -177,9 +177,8 @@ export default async function ProjectPage({ params }) {
         </div>
         
         {/* Gallery section - displaying actual gallery images */}
-        <div className="mt-28 mb-28">
-          <h3 className="text-lg font-normal text-white mb-8 text-left font-inter pl-4">Gallery</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-32 mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {project.gallery && project.gallery.length > 0 ? (
               project.gallery.map((image, index) => (
                 <div key={index} className="relative h-96 rounded-3xl overflow-hidden">
@@ -220,14 +219,14 @@ export default async function ProjectPage({ params }) {
         
         {/* More Projects Section - applying new styling with Inter font, white body text, and padded section titles */}
         {moreProjects && moreProjects.length > 0 && (
-          <div className="mt-32">
-            <h3 className="text-lg font-normal text-white mb-12 text-left font-inter pl-4">More Projects</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-32 pb-32">
+            <h3 className="text-lg font-normal text-white mb-16 text-left font-inter pl-4">More Projects</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {moreProjects.map((proj) => (
                 <div key={proj.slug} className="bg-gray-800 rounded-2xl overflow-hidden hover:bg-gray-700 transition-colors">
-                  <div className="p-6">
-                    <h4 className="text-xl font-bold text-white mb-2 font-inter">{proj.title}</h4>
-                    <p className="text-white mb-4 font-inter text-lg">{proj.description}</p>
+                  <div className="p-8">
+                    <h4 className="text-xl font-bold text-white mb-4 font-inter">{proj.title}</h4>
+                    <p className="text-white mb-6 font-inter text-lg">{proj.description}</p>
                     <Link 
                       href={`/projects/${proj.slug}`}
                       className="text-[#C7EA46] hover:text-[#b0d830] transition-colors font-bold font-inter"
