@@ -14,17 +14,19 @@ export default function PortfolioPage() {
 
   return (
     <Container>
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-white mb-6">Portfolio</h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Explore all of my projects and see the work I'm passionate about.
+          <div className="text-center mb-32">
+            <h1 className="text-[140px] font-bold text-white font-inter text-transform: uppercase mb-6">
+              Portfolio
+            </h1>
+            <p className="text-lg font-regular text-white max-w-4xl mx-auto font-inter">
+              Bekijk al mijn projecten en ontdek het werk waar ik echt passie voor heb.
             </p>
           </div>
           
           {allProjects.length > 0 ? (
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 gap-16">
               {allProjects.map((project) => (
                 <ProjectCard 
                   key={project.slug}

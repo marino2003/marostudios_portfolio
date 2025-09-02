@@ -42,9 +42,9 @@ export default function ProjectCard({ project, fullWidth = true }) {
           
           {/* Right side: Arrow button with rounded rectangle style */}
           <div className="flex-shrink-0 self-end">
-            <div className="block px-5 py-3 border-2 border-white rounded-full transition-all duration-300 group-hover/card:hover:bg-white">
+            <div className="block px-5 py-3 border-2 border-white rounded-full transition-colors duration-300 group-hover/card:bg-white">
               <svg 
-                className="w-6 h-6 text-white transition-colors duration-300 group-hover/card:hover:text-black group-hover/card:-rotate-12 transition-transform duration-300" 
+                className="w-6 h-6 text-white transition-colors duration-300 group-hover/card:text-black group-hover/card:-rotate-12 transition-transform duration-300" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24" 
