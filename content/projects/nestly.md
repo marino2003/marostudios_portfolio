@@ -2,6 +2,7 @@
 title: "Nestly"
 slug: "nestly"
 featured: true
+order: 1
 date: "2023-05-15"
 featuredImage: "/img/projects/sample_project/Mockup.png"
 subtitle: "Smart Shared Household Billsplitter"

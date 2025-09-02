@@ -2,6 +2,7 @@
 title: "Mindscroll"
 slug: "mindscroll"
 featured: true
+order: 2
 date: "2023-05-15"
 featuredImage: "/img/projects/mindscroll/1.jpg"
 subtitle: "MindScroll is een interactieve en productieve content-feed, volledig afgestemd op jouw interesses. In plaats van eindeloos scrollen door irrelevante of oppervlakkige posts, brengt MindScroll je enkel de content die je écht verder helpt, van prikkelende quotes tot diepgaande ideeën uit boeken, artikelen en meer."
