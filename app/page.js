@@ -23,7 +23,7 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4 md:mb-0">Projecten</h2>
+            <h2 className="text-lg font-normal text-white mb-4 md:mb-0 font-inter">Projecten</h2>
             <Link 
               href="/portfolio" 
               className="inline-flex items-center text-white hover:text-gray-300 transition-colors text-lg font-bold group"

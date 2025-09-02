@@ -1,5 +1,6 @@
 import { getProjectBySlug, getAllProjects } from '@/lib/projects';
 import Link from 'next/link';
+import ProjectCard from '@/app/components/ProjectCard';
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
@@ -232,24 +233,36 @@ export default async function ProjectPage({ params }) {
           </div>
         </div>
         
-        {/* More Projects Section - applying new styling with Inter font, white body text, and padded section titles */}
+        {/* More Projects Section - using the same element as homepage */}
         {moreProjects && moreProjects.length > 0 && (
           <div className="mt-32 pb-32">
-            <h3 className="text-lg font-normal text-white mb-16 text-left font-inter pl-4">More Projects</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-16">
+              <h2 className="text-lg font-normal text-white mb-4 md:mb-0 font-inter">More Projects</h2>
+              <Link 
+                href="/portfolio" 
+                className="inline-flex items-center text-white hover:text-gray-300 transition-colors text-lg font-bold group"
+              >
+                <span className="border-b-2 border-white group-hover:border-transparent transition-all duration-300">
+                  Meer Projecten
+                </span>
+                <svg 
+                  className="ml-2 w-5 h-5 group-hover:-rotate-12 transition-transform duration-300" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {moreProjects.map((proj) => (
-                <div key={proj.slug} className="bg-gray-800 rounded-2xl overflow-hidden hover:bg-gray-700 transition-colors">
-                  <div className="p-8">
-                    <h4 className="text-xl font-bold text-white mb-4 font-inter">{proj.title}</h4>
-                    <p className="text-white mb-6 font-inter text-lg">{proj.description}</p>
-                    <Link 
-                      href={`/projects/${proj.slug}`}
-                      className="text-[#C7EA46] hover:text-[#b0d830] transition-colors font-bold font-inter"
-                    >
-                      View Project →
-                    </Link>
-                  </div>
-                </div>
+                <ProjectCard 
+                  key={proj.slug}
+                  project={proj}
+                  fullWidth={true}
+                />
               ))}
             </div>
           </div>
