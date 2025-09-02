@@ -20,7 +20,7 @@ export default function PortfolioPage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="text-center mb-32">
-              <h1 className="text-[140px] font-bold text-white font-inter text-transform: uppercase mb-6">
+              <h1 className="text-5xl md:text-7xl lg:text-[140px] font-bold text-white font-inter text-transform: uppercase mb-6">
                 Portfolio
               </h1>
               <p className="text-lg font-regular text-white max-w-4xl mx-auto font-inter">

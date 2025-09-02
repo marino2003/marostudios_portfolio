@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }) {
         {/* Header with titles - updated styling */}
         <FadeIn>
           <header className="mb-32 text-center">
-            <h1 className="text-[140px] font-bold text-white  font-inter text-transform: uppercase">
+            <h1 className="text-5xl md:text-7xl lg:text-[140px] font-bold text-white font-inter text-transform: uppercase">
               {project.title}
             </h1>
             {project.subtitle && (
@@ -79,7 +79,7 @@ export default async function ProjectPage({ params }) {
             
             {/* Featured image with relative positioning, 1fr width, and 800px height */}
             {project.featuredImage && (
-              <div className="relative w-full h-[800px] rounded-3xl overflow-hidden mb-32">
+              <div className="relative w-full h-64 sm:h-96 md:h-[800px] rounded-3xl overflow-hidden mb-32">
                 <img 
                   src={project.featuredImage} 
                   alt={project.title}
@@ -91,7 +91,7 @@ export default async function ProjectPage({ params }) {
         </FadeIn>
         
         {/* Two-column layout: tags on left, content on right */}
-        <div className="flex flex-col lg:flex-row gap-16 mb-32">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-16 mb-16 md:mb-32">
           {/* Left column: Tags with Details title */}
           <SlideIn direction="left" className="lg:w-1/3">
             <h2 className="text-lg font-normal text-white mb-8 text-left font-inter pl-4">Details</h2>
@@ -99,7 +99,7 @@ export default async function ProjectPage({ params }) {
               {/* Categorie tags */}
               {project.categorie && project.categorie.length > 0 && (
                 <div className="font-inter">
-                  <span className="text-white font-inter text-lg font-regular mr-2">Categorie:</span>
+                  <span className="text-white font-inter text-base md:text-lg font-regular mr-2">Categorie:</span>
                   {project.categorie.map((cat, index) => (
                     <span 
                       key={index} 
@@ -165,10 +165,10 @@ export default async function ProjectPage({ params }) {
               {sections.map((section, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
                   <section className="mb-16">
-                    <h2 className="text-lg font-normal text-white mb-8 text-left font-inter pl-4">
+                    <h2 className="text-2xl md:text-3xl font-normal text-white mb-8 text-left font-inter pl-4">
                       {section.title}
                     </h2>
-                    <div className="text-white max-w-4xl text-lg font-inter">
+                    <div className="text-white max-w-4xl text-base md:text-lg font-inter">
                       {section.content.split('\n').filter(line => line.trim() !== '').map((paragraph, pIndex) => {
                         // Handle bold text (marked with *text*)
                         const boldFormatted = paragraph.replace(/\*([^*]+)\*/g, '<strong>$1</strong>');
@@ -199,11 +199,11 @@ export default async function ProjectPage({ params }) {
         
         {/* Gallery section - displaying actual gallery images */}
         <FadeIn>
-          <div className="mt-32 mb-32">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="mt-16 md:mt-32 mb-16 md:mb-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
               {project.gallery && project.gallery.length > 0 ? (
                 project.gallery.map((image, index) => (
-                  <div key={index} className="relative h-96 rounded-3xl overflow-hidden">
+                  <div key={index} className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
                     <img 
                       src={image} 
                       alt={`${project.title} - Gallery Image ${index + 1}`}
@@ -214,22 +214,22 @@ export default async function ProjectPage({ params }) {
               ) : (
                 // Fallback placeholder images if no gallery images are provided
                 <>
-                  <div className="relative h-96 rounded-3xl overflow-hidden">
+                  <div className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
                     <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                       <span className="text-gray-400">Gallery Image 1</span>
                     </div>
                   </div>
-                  <div className="relative h-96 rounded-3xl overflow-hidden">
+                  <div className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
                     <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                       <span className="text-gray-400">Gallery Image 2</span>
                     </div>
                   </div>
-                  <div className="relative h-96 rounded-3xl overflow-hidden">
+                  <div className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
                     <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                       <span className="text-gray-400">Gallery Image 3</span>
                     </div>
                   </div>
-                  <div className="relative h-96 rounded-3xl overflow-hidden">
+                  <div className="relative h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
                     <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                       <span className="text-gray-400">Gallery Image 4</span>
                     </div>
@@ -243,8 +243,8 @@ export default async function ProjectPage({ params }) {
         {/* More Projects Section - using the same element as homepage */}
         {moreProjects && moreProjects.length > 0 && (
           <FadeIn>
-            <div className="mt-32 pb-32">
-              <div className="flex flex-col md:flex-row justify-between items-center mb-16">
+            <div className="mt-16 md:mt-32 pb-16 md:pb-32">
+              <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-16">
                 <h2 className="text-lg font-normal text-white mb-4 md:mb-0 font-inter">More Projects</h2>
                 <Link 
                   href="/portfolio" 

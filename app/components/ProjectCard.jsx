@@ -5,7 +5,7 @@ export default function ProjectCard({ project, fullWidth = true }) {
     <Link href={`/projects/${project.slug}`} className={`bg-[#1C1C1C] rounded-3xl overflow-hidden block ${fullWidth ? 'w-full' : 'w-full md:w-[calc(50%-1rem)]'} group/card`} style={{ contain: 'layout style' }}>
       {/* Featured image with rounded corners on all sides and hover effect */}
       {project.featuredImage && (
-        <div className="relative w-full h-[600px] rounded-3xl overflow-hidden">
+        <div className="relative w-full h-64 sm:h-80 md:h-[600px] rounded-3xl overflow-hidden">
           <img 
             src={project.featuredImage} 
             alt={project.title}
@@ -21,7 +21,7 @@ export default function ProjectCard({ project, fullWidth = true }) {
         <div className="flex flex-col md:flex-row justify-between gap-6">
           {/* Left side: Project title and tags */}
           <div className="flex-1">
-            <h3 className="text-2xl font-regular text-white mb-3 font-inter">
+            <h3 className="text-2xl md:text-3xl font-regular text-white mb-3 font-inter">
               {project.title}
             </h3>
             <div className="flex flex-wrap gap-2">
