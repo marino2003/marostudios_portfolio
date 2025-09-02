@@ -30,7 +30,7 @@ export default function PortfolioPage() {
           </FadeIn>
           
           {allProjects.length > 0 ? (
-            <div className="grid grid-cols-1 gap-16">
+            <div className="grid grid-cols-1 gap-8 sm:gap-12 md:gap-16">
               {allProjects.map((project, index) => (
                 <ProjectCardAnimation key={project.slug} delay={index * 0.1} direction="up" distance={30}>
                   <ProjectCard 

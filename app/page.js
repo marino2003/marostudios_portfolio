@@ -48,7 +48,7 @@ export default function HomePage() {
           </FadeIn>
           
           {featuredProjects.length > 0 ? (
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {featuredProjects.map((project, index) => (
                 <ProjectCardAnimation key={project.slug} delay={index * 0.1} direction="up" distance={30}>
                   <ProjectCard 
