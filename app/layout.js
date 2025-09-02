@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import { LenisProvider } from "@/components/providers/LenisProvider";
+import { ScrollAnimationProvider } from "@/components/providers/ScrollAnimationProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,11 +39,13 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${dmSerifText.variable} ${inter.variable} antialiased`}
       >
         <LenisProvider>
-          <Header />
-          <main>
-            {children}
-          </main>
-          <Footer />
+          <ScrollAnimationProvider>
+            <Header />
+            <main>
+              {children}
+            </main>
+            <Footer />
+          </ScrollAnimationProvider>
         </LenisProvider>
       </body>
     </html>

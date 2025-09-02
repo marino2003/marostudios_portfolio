@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, createContext, useContext } from 'react';
+import { useEffect, createContext, useContext, useRef } from 'react';
 import Lenis from 'lenis';
 
 const LenisContext = createContext();
@@ -10,6 +10,8 @@ export function useLenis() {
 }
 
 export function LenisProvider({ children }) {
+  const lenisRef = useRef(null);
+
   useEffect(() => {
     // Create a new Lenis instance
     const lenis = new Lenis({
@@ -23,6 +25,9 @@ export function LenisProvider({ children }) {
       touchMultiplier: 2,
       infinite: false,
     });
+
+    // Store the lenis instance in ref
+    lenisRef.current = lenis;
 
     // RAF for Lenis
     function raf(time) {
@@ -39,7 +44,7 @@ export function LenisProvider({ children }) {
   }, []);
 
   return (
-    <LenisContext.Provider value={null}>
+    <LenisContext.Provider value={lenisRef.current}>
       {children}
     </LenisContext.Provider>
   );
