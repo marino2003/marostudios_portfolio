@@ -11,7 +11,7 @@ gallery:
   - "/img/projects/sample_project/1.png"
   - "/img/projects/sample_project/2.png"
   - "/img/projects/sample_project/3.png"
-categorie: ['UI/UX Design', 'User Research' ]
+categorie: ['UI/UX Design']
 rol: ['UI/UX Designer', 'Reseacher']
 tools: ['Figma']
 datum: ['24 Augustus 2025']

@@ -94,12 +94,12 @@ export default async function ProjectPage({ params }) {
             <div className="space-y-6">
               {/* Categorie tags */}
               {project.categorie && project.categorie.length > 0 && (
-                <div>
-                  <span className="text-white font-inter font-bold mr-2">Categorie:</span>
+                <div className="font-inter">
+                  <span className="text-white font-inter text-lg font-regular mr-2">Categorie:</span>
                   {project.categorie.map((cat, index) => (
                     <span 
                       key={index} 
-                      className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold mr-2 mb-2"
+                      className="px-4 py-2 border border-white text-white rounded-full text-lg font-regular mr-2"
                     >
                       {cat}
                     </span>
@@ -109,12 +109,12 @@ export default async function ProjectPage({ params }) {
               
               {/* Rol tags */}
               {project.rol && project.rol.length > 0 && (
-                <div>
-                  <span className="text-white font-inter font-bold mr-2">Rol:</span>
+                <div className="font-inter">
+                  <span className="text-white font-inter text-lg font-regular mr-2">Rol:</span>
                   {project.rol.map((role, index) => (
                     <span 
                       key={index} 
-                      className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold mr-2"
+                      className="px-4 py-2 border border-white text-white rounded-full text-lg font-regular mr-2"
                     >
                       {role}
                     </span>
@@ -124,12 +124,12 @@ export default async function ProjectPage({ params }) {
               
               {/* Tools tags */}
               {project.tools && project.tools.length > 0 && (
-                <div>
-                  <span className="text-white font-inter font-bold mr-2">Tools:</span>
+                <div className="font-inter">
+                  <span className="text-white font-inter text-lg font-regular mr-2">Tools:</span>
                   {project.tools.map((tool, index) => (
                     <span 
                       key={index} 
-                      className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold mr-2"
+                      className="px-4 py-2 border border-white text-white rounded-full text-lg font-regular mr-2"
                     >
                       {tool}
                     </span>
@@ -139,12 +139,12 @@ export default async function ProjectPage({ params }) {
               
               {/* Datum tags */}
               {project.datum && project.datum.length > 0 && (
-                <div>
-                  <span className="text-white font-inter font-bold mr-2">Datum:</span>
+                <div className="font-inter">
+                  <span className="text-white font-inter text-lg font-regular mr-2">Datum:</span>
                   {project.datum.map((date, index) => (
                     <span 
                       key={index} 
-                      className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold mr-2 old mr-2"
+                      className="px-4 py-2 border border-white text-white rounded-full text-lg font-regular mr-2"
                     >
                       {date}
                     </span>
@@ -164,11 +164,26 @@ export default async function ProjectPage({ params }) {
                     {section.title}
                   </h2>
                   <div className="text-white max-w-4xl text-lg font-inter">
-                    {section.content.split('\n').filter(line => line.trim() !== '').map((paragraph, pIndex) => (
-                      <p key={pIndex} className="mb-8 leading-relaxed">
-                        {paragraph}
-                      </p>
-                    ))}
+                    {section.content.split('\n').filter(line => line.trim() !== '').map((paragraph, pIndex) => {
+                      // Handle bold text (marked with *text*)
+                      const boldFormatted = paragraph.replace(/\*([^*]+)\*/g, '<strong>$1</strong>');
+                      
+                      // Handle list items (marked with - )
+                      if (paragraph.trim().startsWith('- ')) {
+                        return (
+                          <li 
+                            key={pIndex} 
+                            className="ml-6 mb-2 leading-relaxed list-disc"
+                            dangerouslySetInnerHTML={{ __html: boldFormatted.substring(2) }}
+                          />
+                        );
+                      }
+                      
+                      // Handle regular paragraphs
+                      return (
+                        <p key={pIndex} className="mb-4 leading-relaxed" dangerouslySetInnerHTML={{ __html: boldFormatted }} />
+                      );
+                    })}
                   </div>
                 </section>
               ))}
