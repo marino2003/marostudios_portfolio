@@ -12,6 +12,10 @@ gallery:
   - "/images/projects/health-wellness-app/gallery-2.jpg"
   - "/images/projects/health-wellness-app/gallery-3.jpg"
   - "/images/projects/health-wellness-app/gallery-4.jpg"
+categorie: ["Mobile App", "Health & Fitness"]
+rol: ["UI/UX Design", "Frontend Development", "Backend Development"]
+datum: ["April 2023"]
+tools: ["Figma", "Adobe XD", "Zeplin"]
 ---
 
 # Introduction

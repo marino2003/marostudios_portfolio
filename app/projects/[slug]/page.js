@@ -13,7 +13,11 @@ export default async function ProjectPage({ params }) {
     'content',
     'slug',
     'description',
-    'gallery'
+    'gallery',
+    'categorie',
+    'rol',
+    'datum',
+    'tools'
   ]);
   
   const moreProjects = getAllProjects([
@@ -80,38 +84,96 @@ export default async function ProjectPage({ params }) {
               />
             </div>
           )}
-          
-          {/* Tech tags with white border */}
-          {project.tech && (
-            <div className="flex flex-wrap justify-center gap-3 mb-20">
-              {project.tech.map((tech, index) => (
-                <span 
-                  key={index} 
-                  className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          )}
         </header>
         
-        {/* Content sections - applying new styling with Inter font, white body text, and padded section titles */}
-        <div className="space-y-28">
-          {sections.map((section, index) => (
-            <section key={index} className="mb-16">
-              <h2 className="text-lg font-normal text-white mb-6 text-left font-inter pl-4">
-                {section.title}
-              </h2>
-              <div className="text-white max-w-4xl text-lg font-inter">
-                {section.content.split('\n').filter(line => line.trim() !== '').map((paragraph, pIndex) => (
-                  <p key={pIndex} className="mb-6 leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </section>
-          ))}
+        {/* Two-column layout: tags on left, content on right */}
+        <div className="flex flex-col lg:flex-row gap-12 mb-28">
+          {/* Left column: Tags with Details title */}
+          <div className="lg:w-1/3">
+            <h2 className="text-lg font-normal text-white mb-6 text-left font-inter pl-4">Details</h2>
+            <div className="flex flex-wrap gap-3">
+              {/* Categorie tags */}
+              {project.categorie && project.categorie.length > 0 && (
+                project.categorie.map((cat, index) => (
+                  <span 
+                    key={index} 
+                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
+                  >
+                    {cat}
+                  </span>
+                ))
+              )}
+              
+              {/* Rol tags */}
+              {project.rol && project.rol.length > 0 && (
+                project.rol.map((role, index) => (
+                  <span 
+                    key={index} 
+                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
+                  >
+                    {role}
+                  </span>
+                ))
+              )}
+              
+              {/* Datum tags */}
+              {project.datum && project.datum.length > 0 && (
+                project.datum.map((date, index) => (
+                  <span 
+                    key={index} 
+                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
+                  >
+                    {date}
+                  </span>
+                ))
+              )}
+              
+              {/* Tools tags */}
+              {project.tools && project.tools.length > 0 && (
+                project.tools.map((tool, index) => (
+                  <span 
+                    key={index} 
+                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
+                  >
+                    {tool}
+                  </span>
+                ))
+              )}
+              
+              {/* Original tech tags */}
+              {project.tech && project.tech.length > 0 && (
+                project.tech.map((tech, index) => (
+                  <span 
+                    key={index} 
+                    className="px-4 py-2 border border-white text-white rounded-full text-sm font-bold"
+                  >
+                    {tech}
+                  </span>
+                ))
+              )}
+            </div>
+          </div>
+          
+          {/* Right column: Content sections */}
+          <div className="lg:w-2/3">
+            {/* Content sections - applying new styling with Inter font, white body text, and padded section titles */}
+            <div className="space-y-28">
+              {sections.map((section, index) => (
+                <section key={index} className="mb-16">
+                  <h2 className="text-lg font-normal text-white mb-6 text-left font-inter pl-4">
+                    {section.title}
+                  </h2>
+                  <div className="text-white max-w-4xl text-lg font-inter">
+                    {section.content.split('\n').filter(line => line.trim() !== '').map((paragraph, pIndex) => (
+                      <p key={pIndex} className="mb-6 leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </div>
         </div>
         
         {/* Gallery section - displaying actual gallery images */}
