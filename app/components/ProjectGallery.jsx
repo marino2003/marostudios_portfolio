@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { Lightbox } from '@/components/ui/Lightbox';
 
-export function ProjectGallery({ images, title }) {
+export const ProjectGallery = memo(function ProjectGallery({ images, title }) {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
@@ -39,6 +39,7 @@ export function ProjectGallery({ images, title }) {
                 src={image} 
                 alt={`${title} - Gallery Image ${index + 1}`}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
               />
               {/* Overlay with expand icon */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
@@ -95,4 +96,4 @@ export function ProjectGallery({ images, title }) {
       )}
     </>
   );
-}
+});

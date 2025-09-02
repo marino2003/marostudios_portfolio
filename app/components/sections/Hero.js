@@ -2,8 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PixelTrail from "@/components/fancy/background/pixel-trail";
 import { FadeIn, SlideIn } from '@/components/ui/ScrollAnimations';
+import { memo } from 'react';
 
-export default function Hero() {
+function Hero() {
   return (
     <section className="py-8 sm:py-12 md:py-16 relative overflow-hidden">
       {/* Container voor gecentreerde content */}
@@ -11,7 +12,7 @@ export default function Hero() {
         {/* Profile Picture */}
         <SlideIn direction="up">
           <div className="flex justify-center relative">
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+            <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <Image
                 src="/img/hero_image.png"
                 alt=""
@@ -26,8 +27,8 @@ export default function Hero() {
 
         {/* Text content - met negatieve margin om over de afbeelding te lopen */}
         <FadeIn delay={0.3}>
-          <div className="text-center -mt-12 sm:-mt-16 md:-mt-18 relative z-10">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-bold text-white mb-6 sm:mb-8 leading-tight">
+          <div className="text-center -mt-8 sm:-mt-16 md:-mt-18 relative z-10 px-4">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               MARIJN PIEPER
             </h1>
             
@@ -70,3 +71,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export default memo(Hero);

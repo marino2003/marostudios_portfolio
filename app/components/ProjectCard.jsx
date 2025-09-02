@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { memo } from 'react';
 
-export default function ProjectCard({ project, fullWidth = true }) {
+function ProjectCard({ project, fullWidth = true }) {
   return (
-    <Link href={`/projects/${project.slug}`} className={`bg-[#1C1C1C] rounded-3xl overflow-hidden block ${fullWidth ? 'w-full' : 'w-full md:w-[calc(50%-1rem)]'} group/card hover:-translate-y-1 transition-transform duration-300`} style={{ contain: 'layout style' }}>
+    <Link href={`/projects/${project.slug}`} className={`bg-[#1C1C1C] rounded-3xl overflow-hidden block ${fullWidth ? 'w-full' : 'w-full md:w-[calc(50%-1rem)]'} group/card transition-transform duration-300 hover:-translate-y-1`} style={{ contain: 'layout style' }}>
       {/* Featured image with rounded corners on all sides and hover effect */}
       {project.featuredImage && (
         <div className={`relative w-full ${fullWidth ? 'h-48 sm:h-48 md:h-80 lg:h-[600px]' : 'h-48 sm:h-48 md:h-64'} rounded-2xl sm:rounded-3xl overflow-hidden`}>
@@ -10,6 +11,7 @@ export default function ProjectCard({ project, fullWidth = true }) {
             src={project.featuredImage} 
             alt={project.title}
             className="w-full h-full object-cover rounded-2xl sm:rounded-3xl transition-transform duration-700 group-hover/card:scale-105"
+            loading="lazy"
           />
           {/* Overlay that fades out on hover */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
@@ -64,3 +66,6 @@ export default function ProjectCard({ project, fullWidth = true }) {
     </Link>
   );
 }
+
+// Memoize the component to prevent unnecessary re-renders
+export default memo(ProjectCard);

@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-export function Lightbox({ images, currentIndex, onClose, onNext, onPrev }) {
+export const Lightbox = memo(function Lightbox({ images, currentIndex, onClose, onNext, onPrev }) {
   const [isLoading, setIsLoading] = useState(true);
 
   // Handle keyboard navigation
@@ -150,6 +150,7 @@ export function Lightbox({ images, currentIndex, onClose, onNext, onPrev }) {
                   src={image} 
                   alt={`Thumbnail ${index + 1}`} 
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </button>
             ))}
@@ -158,4 +159,4 @@ export function Lightbox({ images, currentIndex, onClose, onNext, onPrev }) {
       </motion.div>
     </AnimatePresence>
   );
-}
+});

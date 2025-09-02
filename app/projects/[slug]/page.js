@@ -1,7 +1,7 @@
 import { getProjectBySlug, getAllProjects } from '@/lib/projects';
 import Link from 'next/link';
 import ProjectCard from '@/app/components/ProjectCard';
-import { FadeIn, SlideIn } from '@/components/ui/ScrollAnimations';
+import { FadeIn, SlideIn, ContentSectionAnimation } from '@/components/ui/ScrollAnimations';
 import { ProjectGallery } from '@/app/components/ProjectGallery';
 
 export default async function ProjectPage({ params }) {
@@ -179,11 +179,11 @@ export default async function ProjectPage({ params }) {
             {/* Right column: Content sections */}
             <SlideIn direction="right" className="lg:w-2/3">
               {/* Content sections - applying new styling with Inter font, white body text, and padded section titles */}
-              <div className="space-y-16 sm:space-y-24 md:space-y-32">
+              <div className="space-y-12 sm:space-y-16 md:space-y-24">
                 {sections.map((section, index) => (
-                  <FadeIn key={index} delay={index * 0.1}>
-                    <section className="mb-8 sm:mb-12 md:mb-16">
-                      <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-left font-inter relative pl-4">
+                  <ContentSectionAnimation key={index} delay={index * 0.1}>
+                    <section className="mb-6 sm:mb-8 md:mb-12">
+                      <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8 md:mb-8 text-left font-inter relative pl-4">
                         <span className="relative z-10">{section.title}</span>
                         <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-8 md:h-10 bg-[#C7EA46] rounded-full"></span>
                       </h2>
@@ -210,7 +210,7 @@ export default async function ProjectPage({ params }) {
                         })}
                       </div>
                     </section>
-                  </FadeIn>
+                  </ContentSectionAnimation>
                 ))}
               </div>
             </SlideIn>
