@@ -3,7 +3,8 @@ import Hero from './components/sections/Hero';
 import Link from 'next/link';
 import { getFeaturedProjects } from '@/lib/projects';
 import ProjectCard from './components/ProjectCard';
-import { FadeIn, StaggeredFadeIn, StaggeredItem } from '@/components/ui/ScrollAnimations';
+import { FadeIn } from '@/components/ui/ScrollAnimations';
+import { ProjectCardAnimation } from '@/components/ui/ProjectCardAnimation';
 
 export default function HomePage() {
   // Get only the first 3 featured projects
@@ -47,18 +48,16 @@ export default function HomePage() {
           </FadeIn>
           
           {featuredProjects.length > 0 ? (
-            <StaggeredFadeIn>
-              <div className="space-y-8">
-                {featuredProjects.map((project) => (
-                  <StaggeredItem key={project.slug}>
-                    <ProjectCard 
-                      project={project}
-                      fullWidth={true}
-                    />
-                  </StaggeredItem>
-                ))}
-              </div>
-            </StaggeredFadeIn>
+            <div className="space-y-8">
+              {featuredProjects.map((project, index) => (
+                <ProjectCardAnimation key={project.slug} delay={index * 0.1} direction="up" distance={30}>
+                  <ProjectCard 
+                    project={project}
+                    fullWidth={true}
+                  />
+                </ProjectCardAnimation>
+              ))}
+            </div>
           ) : (
             <FadeIn>
               <div className="text-center py-12">

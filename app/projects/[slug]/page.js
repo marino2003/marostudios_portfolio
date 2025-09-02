@@ -1,7 +1,7 @@
 import { getProjectBySlug, getAllProjects } from '@/lib/projects';
 import Link from 'next/link';
 import ProjectCard from '@/app/components/ProjectCard';
-import { FadeIn, StaggeredFadeIn, StaggeredItem, SlideIn } from '@/components/ui/ScrollAnimations';
+import { FadeIn, SlideIn } from '@/components/ui/ScrollAnimations';
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
@@ -264,18 +264,16 @@ export default async function ProjectPage({ params }) {
                   </svg>
                 </Link>
               </div>
-              <StaggeredFadeIn>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {moreProjects.map((proj) => (
-                    <StaggeredItem key={proj.slug}>
-                      <ProjectCard 
-                        project={proj}
-                        fullWidth={true}
-                      />
-                    </StaggeredItem>
-                  ))}
-                </div>
-              </StaggeredFadeIn>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {moreProjects.map((proj, index) => (
+                  <FadeIn key={proj.slug} delay={index * 0.1}>
+                    <ProjectCard 
+                      project={proj}
+                      fullWidth={true}
+                    />
+                  </FadeIn>
+                ))}
+              </div>
             </div>
           </FadeIn>
         )}

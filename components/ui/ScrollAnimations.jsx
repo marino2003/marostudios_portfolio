@@ -32,6 +32,7 @@ export function SlideIn({
   className,
   direction = 'up',
   delay = 0,
+  distance = 30,
   ...props 
 }) {
   const ref = useRef(null);
@@ -39,11 +40,11 @@ export function SlideIn({
 
   const getInitialPosition = () => {
     switch (direction) {
-      case 'up': return { opacity: 0, y: 30 };
-      case 'down': return { opacity: 0, y: -30 };
-      case 'left': return { opacity: 0, x: 30 };
-      case 'right': return { opacity: 0, x: -30 };
-      default: return { opacity: 0, y: 30 };
+      case 'up': return { opacity: 0, y: distance };
+      case 'down': return { opacity: 0, y: -distance };
+      case 'left': return { opacity: 0, x: distance };
+      case 'right': return { opacity: 0, x: -distance };
+      default: return { opacity: 0, y: distance };
     }
   };
 

@@ -1,7 +1,8 @@
 import Container from '../components/ui/Container';
 import { getAllProjects } from '@/lib/projects';
 import ProjectCard from '../components/ProjectCard';
-import { FadeIn, StaggeredFadeIn, StaggeredItem } from '@/components/ui/ScrollAnimations';
+import { FadeIn } from '@/components/ui/ScrollAnimations';
+import { ProjectCardAnimation } from '@/components/ui/ProjectCardAnimation';
 
 export default function PortfolioPage() {
   const allProjects = getAllProjects([
@@ -29,18 +30,16 @@ export default function PortfolioPage() {
           </FadeIn>
           
           {allProjects.length > 0 ? (
-            <StaggeredFadeIn>
-              <div className="grid grid-cols-1 gap-16">
-                {allProjects.map((project) => (
-                  <StaggeredItem key={project.slug}>
-                    <ProjectCard 
-                      project={project}
-                      fullWidth={true}
-                    />
-                  </StaggeredItem>
-                ))}
-              </div>
-            </StaggeredFadeIn>
+            <div className="grid grid-cols-1 gap-16">
+              {allProjects.map((project, index) => (
+                <ProjectCardAnimation key={project.slug} delay={index * 0.1} direction="up" distance={30}>
+                  <ProjectCard 
+                    project={project}
+                    fullWidth={true}
+                  />
+                </ProjectCardAnimation>
+              ))}
+            </div>
           ) : (
             <FadeIn>
               <div className="text-center py-12">
