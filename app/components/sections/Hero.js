@@ -33,9 +33,20 @@ export default function Hero() {
           
           <Link 
             href="/portfolio" 
-            className="inline-flex items-center text-white hover:text-gray-300 transition-colors text-lg font-medium"
+            className="inline-flex items-center text-white hover:text-gray-300 transition-colors text-lg font-bold group"
           >
-            Portfolio →
+            <span className="border-b-2 border-white group-hover:border-transparent transition-all duration-300">
+              Portfolio
+            </span>
+            <svg 
+              className="ml-2 w-5 h-5 group-hover:-rotate-12 transition-transform duration-300" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </Link>
         </div>
       </div>
