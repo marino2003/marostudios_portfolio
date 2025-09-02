@@ -11,7 +11,8 @@ export default function PortfolioPage() {
     'description',
     'featuredImage',
     'categorie',
-    'rol'
+    'rol',
+    'order'  // Make sure we include the order field for proper sorting
   ]);
 
   return (

@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 export default function ProjectCard({ project, fullWidth = true }) {
   return (
-    <Link href={`/projects/${project.slug}`} className={`bg-[#1C1C1C] rounded-3xl overflow-hidden block ${fullWidth ? 'w-full' : 'w-full md:w-[calc(50%-1rem)]'} group/card`} style={{ contain: 'layout style' }}>
+    <Link href={`/projects/${project.slug}`} className={`bg-[#1C1C1C] rounded-3xl overflow-hidden block ${fullWidth ? 'w-full' : 'w-full md:w-[calc(50%-1rem)]'} group/card hover:-translate-y-1 transition-transform duration-300`} style={{ contain: 'layout style' }}>
       {/* Featured image with rounded corners on all sides and hover effect */}
       {project.featuredImage && (
-        <div className="relative w-full h-40 sm:h-48 md:h-80 lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden">
+        <div className={`relative w-full ${fullWidth ? 'h-48 sm:h-48 md:h-80 lg:h-[600px]' : 'h-48 sm:h-48 md:h-64'} rounded-2xl sm:rounded-3xl overflow-hidden`}>
           <img 
             src={project.featuredImage} 
             alt={project.title}
@@ -18,22 +18,22 @@ export default function ProjectCard({ project, fullWidth = true }) {
       
       {/* Information section with two columns */}
       <div className="p-4 sm:p-6 md:p-8">
-        <div className="flex flex-col gap-4 sm:gap-6">
+        <div className={`flex ${fullWidth ? 'flex-col sm:flex-row sm:items-center sm:justify-between' : 'flex-col'} gap-4 sm:gap-6`}>
           {/* Left side: Project title and tags */}
           <div className="flex-1">
             <h3 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-regular text-white mb-2 sm:mb-3 font-inter">
               {project.title}
             </h3>
             <div className="flex flex-wrap gap-2">
-              {/* Categorie tag - hide on mobile, show on tablet and desktop */}
+              {/* Categorie tag - show on mobile with smaller size */}
               {project.categorie && project.categorie.length > 0 && (
-                <span className="hidden sm:inline-block px-3 py-1 sm:px-4 sm:py-2 border border-white text-white rounded-full text-sm sm:text-base font-inter">
+                <span className="inline-block px-2.5 py-1 sm:px-3 sm:py-1.5 border border-white text-white rounded-full text-xs sm:text-sm font-inter">
                   {project.categorie[0]}
                 </span>
               )}
-              {/* Role tag - hide on mobile, show on tablet and desktop */}
+              {/* Role tag - show on mobile with smaller size */}
               {project.rol && project.rol.length > 0 && (
-                <span className="hidden sm:inline-block px-3 py-1 sm:px-4 sm:py-2 border border-white text-white rounded-full text-sm sm:text-base font-inter">
+                <span className="inline-block px-2.5 py-1 sm:px-3 sm:py-1.5 border border-white text-white rounded-full text-xs sm:text-sm font-inter">
                   {project.rol[0]}
                 </span>
               )}
