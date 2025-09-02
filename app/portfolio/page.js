@@ -20,8 +20,9 @@ export default function PortfolioPage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="text-center mb-32">
-              <h1 className="text-5xl md:text-7xl lg:text-[140px] font-bold text-white font-inter text-transform: uppercase mb-6">
+              <h1 className="text-5xl md:text-7xl lg:text-[140px] font-bold text-white font-inter uppercase mb-6 relative inline-block group">
                 Portfolio
+                <span className="absolute bottom-0 left-0 w-0 h-1.5 bg-[#C7EA46] rounded-full animate-draw-line group-hover:w-full transition-all duration-500"></span>
               </h1>
               <p className="text-lg font-regular text-white max-w-4xl mx-auto font-inter">
                 Bekijk al mijn projecten en ontdek het werk waar ik echt passie voor heb.

@@ -98,23 +98,23 @@ export default async function ProjectPage({ params }) {
           </div>
           
           {/* Two-column layout: tags on left, content on right */}
-          <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 mb-12 sm:mb-20 md:mb-32">
+          <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-20 md:mb-32">
             {/* Left column: Tags with Details title */}
             <SlideIn direction="left" className="lg:w-1/3">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 md:mb-8 text-left font-inter relative pl-4">
                 <span className="relative z-10">Details</span>
                 <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-8 md:h-10 bg-[#C7EA46] rounded-full"></span>
               </h2>
-              <div className="space-y-3 sm:space-y-4 md:space-y-6">
+              <div className="space-y-2 sm:space-y-3 md:space-y-4">
                 {/* Categorie tags */}
                 {project.categorie && project.categorie.length > 0 && (
                   <div className="font-inter">
                     <span className="text-white font-inter text-base sm:text-lg font-regular mr-1 sm:mr-2">Categorie:</span>
-                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-1 sm:mt-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-1.5 mt-1 sm:mt-2">
                       {project.categorie.map((cat, index) => (
                         <span 
                           key={index} 
-                          className="px-3 py-1 sm:px-4 sm:py-2 border border-white text-white rounded-full text-sm sm:text-base font-regular mr-1 sm:mr-2 mb-1 inline-block"
+                          className="px-2.5 py-1 sm:px-3 sm:py-1.5 border border-white text-white rounded-full text-sm sm:text-base font-regular mr-1 sm:mr-1.5 mb-1 inline-block"
                         >
                           {cat}
                         </span>
@@ -127,11 +127,11 @@ export default async function ProjectPage({ params }) {
                 {project.rol && project.rol.length > 0 && (
                   <div className="font-inter">
                     <span className="text-white font-inter text-base sm:text-lg font-regular mr-1 sm:mr-2">Rol:</span>
-                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-1 sm:mt-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-1.5 mt-1 sm:mt-2">
                       {project.rol.map((role, index) => (
                         <span 
                           key={index} 
-                          className="px-3 py-1 sm:px-4 sm:py-2 border border-white text-white rounded-full text-sm sm:text-base font-regular mr-1 sm:mr-2 mb-1 inline-block"
+                          className="px-2.5 py-1 sm:px-3 sm:py-1.5 border border-white text-white rounded-full text-sm sm:text-base font-regular mr-1 sm:mr-1.5 mb-1 inline-block"
                         >
                           {role}
                         </span>
@@ -144,11 +144,11 @@ export default async function ProjectPage({ params }) {
                 {project.tools && project.tools.length > 0 && (
                   <div className="font-inter">
                     <span className="text-white font-inter text-base sm:text-lg font-regular mr-1 sm:mr-2">Tools:</span>
-                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-1 sm:mt-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-1.5 mt-1 sm:mt-2">
                       {project.tools.map((tool, index) => (
                         <span 
                           key={index} 
-                          className="px-3 py-1 sm:px-4 sm:py-2 border border-white text-white rounded-full text-sm sm:text-base font-regular mr-1 sm:mr-2 mb-1 inline-block"
+                          className="px-2.5 py-1 sm:px-3 sm:py-1.5 border border-white text-white rounded-full text-sm sm:text-base font-regular mr-1 sm:mr-1.5 mb-1 inline-block"
                         >
                           {tool}
                         </span>
@@ -161,11 +161,11 @@ export default async function ProjectPage({ params }) {
                 {project.datum && project.datum.length > 0 && (
                   <div className="font-inter">
                     <span className="text-white font-inter text-base sm:text-lg font-regular mr-1 sm:mr-2">Datum:</span>
-                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-1 sm:mt-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-1.5 mt-1 sm:mt-2">
                       {project.datum.map((date, index) => (
                         <span 
                           key={index} 
-                          className="px-3 py-1 sm:px-4 sm:py-2 border border-white text-white rounded-full text-sm sm:text-base font-regular mr-1 sm:mr-2 mb-1 inline-block"
+                          className="px-2.5 py-1 sm:px-3 sm:py-1.5 border border-white text-white rounded-full text-sm sm:text-base font-regular mr-1 sm:mr-1.5 mb-1 inline-block"
                         >
                           {date}
                         </span>
