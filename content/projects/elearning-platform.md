@@ -23,10 +23,10 @@ Het was een warme avond op het terras met mijn huisgenoten. Toen de rekening kwa
 
 # Probleem & doelstellingen
 
-**Probleem**  
+*Probleem*  
 Het eerlijk verdelen van gezamenlijke uitgaven in gedeelde huishoudens is vaak onduidelijk en omslachtig, waardoor misverstanden en frustraties ontstaan.
 
-**Doelstellingen**
+*Doelstellingen*
 
 - Verminderen van tijd en frictie rondom registratie en verrekening van gezamenlijke uitgaven.
 - Gebruikers in staat stellen binnen één minuut een bon te scannen, artikelen toe te wijzen en direct het effect op hun saldo te zien.
@@ -52,13 +52,14 @@ De app richt zich op eerlijk en eenvoudig delen van uitgaven binnen een huishoud
 
 # User testing
 
-- Usability tests met vijf doelgroepgebruikers waarin zowel low-fidelity flows als high-fidelity screens werden getest.
-- Belangrijkste bevindingen en aanpassingen:
-  - De add-knop werd snel gevonden; bevestiging voor prominente plaatsing.
-  - Edit-icoontjes moesten groter en herkenbaarder worden; icoon-grootte en touch-targets aangepast.
-  - Reminder- en betaalflows vroegen om duidelijkere signalering; notificatie-teksten en visuele states verduidelijkt.
-  - Gebruikers waardeerden itemized splits en slimme defaults omdat dit rekenwerk reduceerde.
-- Op basis van de tests voerde ik gerichte iteraties door en updateerde microcopy en component-states.
+Usability tests met vijf doelgroepgebruikers waarin zowel low-fidelity flows als high-fidelity screens werden getest.
+Belangrijkste bevindingen en aanpassingen:
+- De add-knop werd snel gevonden; bevestiging voor prominente plaatsing.
+- Edit-icoontjes moesten groter en herkenbaarder worden; icoon-grootte en touch-targets aangepast.
+- Reminder- en betaalflows vroegen om duidelijkere signalering; notificatie-teksten en visuele states verduidelijkt.
+- Gebruikers waardeerden itemized splits en slimme defaults omdat dit rekenwerk reduceerde.
+
+Op basis van de tests voerde ik gerichte iteraties door en updateerde microcopy en component-states.
 
 # Resultaat
 

@@ -2,14 +2,18 @@ import Container from './components/ui/Container';
 import Hero from './components/sections/Hero';
 import Link from 'next/link';
 import { getFeaturedProjects } from '@/lib/projects';
+import ProjectCard from './components/ProjectCard';
 
 export default function HomePage() {
+  // Get only the first 3 featured projects
   const featuredProjects = getFeaturedProjects([
     'title',
     'slug',
     'description',
-    'featuredImage'
-  ]);
+    'featuredImage',
+    'categorie',
+    'rol'
+  ]).slice(0, 3);
 
   return (
     <Container>
@@ -18,44 +22,35 @@ export default function HomePage() {
       {/* Projects Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Check out some of my recent work and projects I'm proud of.
-            </p>
+          <div className="flex flex-col md:flex-row justify-between items-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4 md:mb-0">Projecten</h2>
+            <Link 
+              href="/portfolio" 
+              className="inline-flex items-center text-white hover:text-gray-300 transition-colors text-lg font-bold group"
+            >
+              <span className="border-b-2 border-white group-hover:border-transparent transition-all duration-300">
+                Meer Projecten
+              </span>
+              <svg 
+                className="ml-2 w-5 h-5 group-hover:-rotate-12 transition-transform duration-300" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </div>
           
           {featuredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="space-y-8">
               {featuredProjects.map((project) => (
-                <Link 
+                <ProjectCard 
                   key={project.slug}
-                  href={`/projects/${project.slug}`}
-                  className="block group"
-                >
-                  <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                    {project.featuredImage && (
-                      <div className="relative h-48 overflow-hidden">
-                        <img 
-                          src={project.featuredImage} 
-                          alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    )}
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#C7EA46] transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-300">
-                        {project.description}
-                      </p>
-                      <div className="mt-4 text-[#C7EA46] font-medium group-hover:text-[#b0d830] transition-colors">
-                        View Project →
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+                  project={project}
+                  fullWidth={true}
+                />
               ))}
             </div>
           ) : (
