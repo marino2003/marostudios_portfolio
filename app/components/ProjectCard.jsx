@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ProjectCard({ project, fullWidth = true }) {
   return (
-    <Link href={`/projects/${project.slug}`} className={`bg-[#1C1C1C] rounded-3xl overflow-hidden block ${fullWidth ? 'w-full' : 'w-full md:w-[calc(50%-1rem)]'} group/card`}>
+    <Link href={`/projects/${project.slug}`} className={`bg-[#1C1C1C] rounded-3xl overflow-hidden block ${fullWidth ? 'w-full' : 'w-full md:w-[calc(50%-1rem)]'} group/card`} style={{ contain: 'layout style' }}>
       {/* Featured image with rounded corners on all sides and hover effect */}
       {project.featuredImage && (
         <div className="relative w-full h-[600px] rounded-3xl overflow-hidden">
@@ -42,7 +42,7 @@ export default function ProjectCard({ project, fullWidth = true }) {
           
           {/* Right side: Arrow button with rounded rectangle style */}
           <div className="flex-shrink-0 self-end">
-            <div className="block px-5 py-3 border-2 border-white rounded-full transition-colors duration-300 group-hover/card:bg-white">
+            <div className="block px-5 py-3 border-2 border-white rounded-full transition-colors duration-300 group-hover/card:bg-white" style={{ willChange: 'background-color, color' }}>
               <svg 
                 className="w-6 h-6 text-white transition-colors duration-300 group-hover/card:text-black group-hover/card:-rotate-12 transition-transform duration-300" 
                 fill="none" 
