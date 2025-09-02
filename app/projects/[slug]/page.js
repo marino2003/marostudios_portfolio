@@ -96,13 +96,16 @@ export default async function ProjectPage({ params }) {
           <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 mb-12 sm:mb-20 md:mb-32">
             {/* Left column: Tags with Details title */}
             <SlideIn direction="left" className="lg:w-1/3">
-              <h2 className="text-2xl md:text-3xl font-normal text-white mb-4 sm:mb-6 md:mb-8 text-left font-inter pl-2 sm:pl-4">Details</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 md:mb-8 text-left font-inter relative pl-4">
+                <span className="relative z-10">Details</span>
+                <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-8 md:h-10 bg-[#C7EA46] rounded-full"></span>
+              </h2>
               <div className="space-y-3 sm:space-y-4 md:space-y-6">
                 {/* Categorie tags */}
                 {project.categorie && project.categorie.length > 0 && (
                   <div className="font-inter">
                     <span className="text-white font-inter text-base sm:text-lg font-regular mr-1 sm:mr-2">Categorie:</span>
-                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-1 sm:mt-2">
                       {project.categorie.map((cat, index) => (
                         <span 
                           key={index} 
@@ -119,7 +122,7 @@ export default async function ProjectPage({ params }) {
                 {project.rol && project.rol.length > 0 && (
                   <div className="font-inter">
                     <span className="text-white font-inter text-base sm:text-lg font-regular mr-1 sm:mr-2">Rol:</span>
-                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-1 sm:mt-2">
                       {project.rol.map((role, index) => (
                         <span 
                           key={index} 
@@ -136,7 +139,7 @@ export default async function ProjectPage({ params }) {
                 {project.tools && project.tools.length > 0 && (
                   <div className="font-inter">
                     <span className="text-white font-inter text-base sm:text-lg font-regular mr-1 sm:mr-2">Tools:</span>
-                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-1 sm:mt-2">
                       {project.tools.map((tool, index) => (
                         <span 
                           key={index} 
@@ -153,7 +156,7 @@ export default async function ProjectPage({ params }) {
                 {project.datum && project.datum.length > 0 && (
                   <div className="font-inter">
                     <span className="text-white font-inter text-base sm:text-lg font-regular mr-1 sm:mr-2">Datum:</span>
-                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-1 sm:mt-2">
                       {project.datum.map((date, index) => (
                         <span 
                           key={index} 
@@ -175,8 +178,9 @@ export default async function ProjectPage({ params }) {
                 {sections.map((section, index) => (
                   <FadeIn key={index} delay={index * 0.1}>
                     <section className="mb-8 sm:mb-12 md:mb-16">
-                      <h2 className="text-2xl md:text-3xl font-normal text-white mb-8 text-left font-inter pl-4">
-                        {section.title}
+                      <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-left font-inter relative pl-4">
+                        <span className="relative z-10">{section.title}</span>
+                        <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-8 md:h-10 bg-[#C7EA46] rounded-full"></span>
                       </h2>
                       <div className="text-white max-w-4xl text-base md:text-lg font-inter">
                         {section.content.split('\n').filter(line => line.trim() !== '').map((paragraph, pIndex) => {
@@ -219,7 +223,9 @@ export default async function ProjectPage({ params }) {
             <FadeIn>
               <div className="mt-16 md:mt-32 pb-16 md:pb-32">
                 <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-16">
-                  <h2 className="text-lg font-normal text-white mb-4 md:mb-0 font-inter">More Projects</h2>
+                  <h2 className="text-lg font-bold text-white mb-4 md:mb-0 font-inter">
+                    More Projects
+                  </h2>
                   <Link 
                     href="/portfolio" 
                     className="inline-flex items-center text-white hover:text-gray-300 transition-colors text-lg font-bold group"
