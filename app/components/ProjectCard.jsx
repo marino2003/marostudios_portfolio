@@ -3,17 +3,19 @@ import { memo } from 'react';
 
 function ProjectCard({ project, fullWidth = true }) {
   return (
-    <Link href={`/projects/${project.slug}`} className={`bg-[#1C1C1C] rounded-3xl overflow-hidden block ${fullWidth ? 'w-full' : 'w-full md:w-[calc(50%-1rem)]'} group/card transition-transform duration-300 hover:-translate-y-1`} style={{ contain: 'layout style' }}>
+    <Link href={`/projects/${project.slug}`} className={`bg-[#1C1C1C] rounded-3xl overflow-hidden block ${fullWidth ? 'w-full' : 'w-full md:w-[calc(50%-1rem)]'} group/card`}>
       {/* Featured image with rounded corners on all sides and hover effect */}
       {project.featuredImage && (
         <div className={`relative w-full ${fullWidth ? 'h-48 sm:h-48 md:h-80 lg:h-[600px]' : 'h-48 sm:h-48 md:h-64'} rounded-2xl sm:rounded-3xl overflow-hidden`}>
-          <img 
-            src={project.featuredImage} 
-            alt={project.title}
-            className="w-full h-full object-cover rounded-2xl sm:rounded-3xl transition-transform duration-700 group-hover/card:scale-105"
-            loading="lazy"
-          />
-          {/* Overlay that fades out on hover */}
+          <div className="absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden bg-[#1C1C1C]">
+            <img 
+              src={project.featuredImage} 
+              alt={project.title}
+              className="w-full h-full object-cover transition-transform duration-700 transform-gpu group-hover/card:scale-105"
+              loading="lazy"
+            />
+          </div>
+          {/* Overlay that fades in on hover */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
         </div>
       )}
@@ -44,7 +46,7 @@ function ProjectCard({ project, fullWidth = true }) {
           
           {/* Right side: Arrow button with rounded rectangle style */}
           <div className="flex-shrink-0 self-end">
-            <div className="block px-4 py-2 sm:px-5 sm:py-3 border-2 border-white rounded-full transition-colors duration-300 group-hover/card:bg-white" style={{ willChange: 'background-color, color' }}>
+            <div className="block px-4 py-2 sm:px-5 sm:py-3 border-2 border-white rounded-full transition-colors duration-300 bg-transparent group-hover/card:bg-white">
               <svg 
                 className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-colors duration-300 group-hover/card:text-black group-hover/card:-rotate-12 transition-transform duration-300" 
                 fill="none" 

@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }) {
     'slug',
     'description',
     'featuredImage'
-  ]).filter(p => p.slug !== slug).slice(0, 3); // Get 3 other projects
+  ]).filter(p => p.slug !== slug).slice(0, 2); // Get only 2 other projects max
 
   // Simple function to extract sections from content
   const extractSections = (content) => {

@@ -5,12 +5,12 @@ draft: false
 featured: true
 order: 3
 date: "2024-01-15"
-featuredImage: "/img/projects/aom/mockup 1.webp"
+featuredImage: "/img/projects/aom/mockup 2.webp"
 subtitle: "Antwerpen op Maat personaliseert je stedentrip door de interface aan te passen op basis van jouw karakter, locatie en doel en serveert direct relevante activiteiten, routes en praktische info. Minder frictie en meer ontdekking; binnen één swipe vind je precies wat jij nu nodig hebt"
 description: "Genui"
 gallery:
   - "/img/projects/aom/mockup 1.webp"
-  - "/img/projects/sample_project/1.png"
+  - "/img/projects/aom/mockup 2.webp"
   - "/img/projects/sample_project/1.png"
   - "/img/projects/sample_project/1.png"
 categorie: ['UI/UX Design']
