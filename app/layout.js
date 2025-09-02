@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { ScrollAnimationProvider } from "@/components/providers/ScrollAnimationProvider";
+import { ScrollRestoration } from "@/components/providers/ScrollRestoration";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       >
         <LenisProvider>
           <ScrollAnimationProvider>
+            <ScrollRestoration />
             <Header />
             <main>
               {children}
