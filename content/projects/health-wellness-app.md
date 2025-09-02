@@ -4,9 +4,14 @@ slug: "health-wellness-app"
 featured: true
 date: "2023-04-20"
 tech: ["React Native", "Firebase", "Redux", "D3.js"]
-featuredImage: "/images/health-app.jpg"
+featuredImage: "/images/projects/health-wellness-app/featured.jpg"
 subtitle: "A comprehensive health tracking application with personalized insights"
 description: "Mobile application that helps users track their health metrics and receive personalized wellness recommendations"
+gallery:
+  - "/images/projects/health-wellness-app/gallery-1.jpg"
+  - "/images/projects/health-wellness-app/gallery-2.jpg"
+  - "/images/projects/health-wellness-app/gallery-3.jpg"
+  - "/images/projects/health-wellness-app/gallery-4.jpg"
 ---
 
 # Introduction

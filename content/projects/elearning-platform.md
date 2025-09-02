@@ -1,12 +1,17 @@
 ---
-title: "E-learning Platform"
-slug: "elearning-platform"
+title: "Nestly"
+slug: "Smart Shared Household Billsplitter"
 featured: true
 date: "2023-05-15"
 tech: ["Next.js", "Tailwind CSS", "MongoDB", "WebRTC"]
-featuredImage: "/images/elearning-platform.jpg"
-subtitle: "Interactive online learning platform with real-time collaboration features"
+featuredImage: "/img/projects/sample_project/Mockup.png"
+subtitle: "Smart Shared Household Billsplitter"
 description: "Web-based educational platform that connects students and teachers with interactive tools and real-time communication"
+gallery:
+  - "/img/projects/sample_project/Mockup.png"
+  - "/img/projects/sample_project/1.png"
+  - "/img/projects/sample_project/2.png"
+  - "/img/projects/sample_project/3.png"
 ---
 
 # Introduction

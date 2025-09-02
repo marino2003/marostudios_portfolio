@@ -12,7 +12,8 @@ export default async function ProjectPage({ params }) {
     'tech',
     'content',
     'slug',
-    'description'
+    'description',
+    'gallery'
   ]);
   
   const moreProjects = getAllProjects([
@@ -57,21 +58,21 @@ export default async function ProjectPage({ params }) {
 
   return (
     <div className="min-h-screen py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Header with titles - keeping original styling */}
-        <header className="mb-20 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 uppercase">
+      <div className="max-w-6xl mx-auto">
+        {/* Header with titles - updated styling */}
+        <header className="mb-30 text-center">
+          <h1 className="text-[140px] font-bold text-white  font-inter text-transform: uppercase">
             {project.title}
           </h1>
           {project.subtitle && (
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            <p className="text-lg font-regular text-white mb-30 max-w-4xl mx-auto font-inter">
               {project.subtitle}
             </p>
           )}
           
-          {/* Featured image with rounded corners */}
+          {/* Featured image with relative positioning, 1fr width, and 800px height */}
           {project.featuredImage && (
-            <div className="relative w-full h-96 rounded-3xl overflow-hidden mb-16">
+            <div className="relative w-full h-[800px] rounded-3xl overflow-hidden mb-16">
               <img 
                 src={project.featuredImage} 
                 alt={project.title}
@@ -102,7 +103,7 @@ export default async function ProjectPage({ params }) {
               <h2 className="text-lg font-normal text-white mb-6 text-left font-inter pl-4">
                 {section.title}
               </h2>
-              <div className="text-white max-w-3xl text-lg font-inter">
+              <div className="text-white max-w-4xl text-lg font-inter">
                 {section.content.split('\n').filter(line => line.trim() !== '').map((paragraph, pIndex) => (
                   <p key={pIndex} className="mb-6 leading-relaxed">
                     {paragraph}
@@ -113,31 +114,45 @@ export default async function ProjectPage({ params }) {
           ))}
         </div>
         
-        {/* Gallery section - applying new styling with Inter font, white body text, and padded section titles */}
+        {/* Gallery section - displaying actual gallery images */}
         <div className="mt-28 mb-28">
           <h3 className="text-lg font-normal text-white mb-8 text-left font-inter pl-4">Gallery</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Placeholder for gallery images - in a real implementation, these would come from the project data */}
-            <div className="relative h-80 rounded-3xl overflow-hidden">
-              <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400">Gallery Image 1</span>
-              </div>
-            </div>
-            <div className="relative h-80 rounded-3xl overflow-hidden">
-              <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400">Gallery Image 2</span>
-              </div>
-            </div>
-            <div className="relative h-80 rounded-3xl overflow-hidden">
-              <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400">Gallery Image 3</span>
-              </div>
-            </div>
-            <div className="relative h-80 rounded-3xl overflow-hidden">
-              <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400">Gallery Image 4</span>
-              </div>
-            </div>
+            {project.gallery && project.gallery.length > 0 ? (
+              project.gallery.map((image, index) => (
+                <div key={index} className="relative h-96 rounded-3xl overflow-hidden">
+                  <img 
+                    src={image} 
+                    alt={`${project.title} - Gallery Image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))
+            ) : (
+              // Fallback placeholder images if no gallery images are provided
+              <>
+                <div className="relative h-96 rounded-3xl overflow-hidden">
+                  <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                    <span className="text-gray-400">Gallery Image 1</span>
+                  </div>
+                </div>
+                <div className="relative h-96 rounded-3xl overflow-hidden">
+                  <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                    <span className="text-gray-400">Gallery Image 2</span>
+                  </div>
+                </div>
+                <div className="relative h-96 rounded-3xl overflow-hidden">
+                  <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                    <span className="text-gray-400">Gallery Image 3</span>
+                  </div>
+                </div>
+                <div className="relative h-96 rounded-3xl overflow-hidden">
+                  <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                    <span className="text-gray-400">Gallery Image 4</span>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
         

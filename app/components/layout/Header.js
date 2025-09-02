@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header className="bg-[#111111] text-white">
-      <div className="max-w-7xl mx-auto px-8 pt-6">
+      <div className="max-w-7xl mx-auto px-8 py-12">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -31,7 +31,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
