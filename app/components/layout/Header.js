@@ -13,6 +13,7 @@ export default function Header() {
     { href: '/over-mij', label: 'Over Mij' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/contact', label: 'Contact' }
+    // { href: '/drafts', label: 'Drafts' } // Uncomment this line to add drafts to navigation
   ];
 
   const toggleMobileMenu = () => {
