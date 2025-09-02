@@ -227,13 +227,14 @@ export default async function ProjectPage({ params }) {
           {moreProjects && moreProjects.length > 0 && (
             <FadeIn>
               <div className="mt-16 md:mt-32 pb-16 md:pb-32">
-                <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-16">
-                  <h2 className="text-lg font-bold text-white mb-4 md:mb-0 font-inter">
-                    More Projects
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-16">
+                  <h2 className="text-lg font-bold text-white mb-4 md:mb-0 font-inter text-left">
+                    <span className="md:hidden">Andere Projecten</span>
+                    <span className="hidden md:inline">More Projects</span>
                   </h2>
                   <Link 
                     href="/portfolio" 
-                    className="inline-flex items-center text-white hover:text-gray-300 transition-colors text-lg font-bold group"
+                    className="hidden md:inline-flex items-center text-white hover:text-gray-300 transition-colors text-lg font-bold group"
                   >
                     <span className="border-b-2 border-white group-hover:border-transparent transition-all duration-300">
                       Meer Projecten
@@ -258,6 +259,26 @@ export default async function ProjectPage({ params }) {
                       />
                     </FadeIn>
                   ))}
+                </div>
+                {/* "Meer Projecten" button - shown under project cards on mobile/tablet only */}
+                <div className="mt-8 flex justify-start md:hidden">
+                  <Link 
+                    href="/portfolio" 
+                    className="inline-flex items-center text-white hover:text-gray-300 transition-colors text-lg font-bold group"
+                  >
+                    <span className="border-b-2 border-white group-hover:border-transparent transition-all duration-300">
+                      Meer Projecten
+                    </span>
+                    <svg 
+                      className="ml-2 w-5 h-5 group-hover:-rotate-12 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </FadeIn>

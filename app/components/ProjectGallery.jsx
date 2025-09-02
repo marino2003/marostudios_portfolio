@@ -27,12 +27,12 @@ export function ProjectGallery({ images, title }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
         {images && images.length > 0 ? (
           images.map((image, index) => (
             <div 
               key={index} 
-              className="relative h-52 sm:h-72 md:h-96 lg:h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer group"
+              className="relative h-64 sm:h-72 md:h-96 lg:h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer group"
               onClick={() => openLightbox(index)}
             >
               <img 
@@ -59,22 +59,22 @@ export function ProjectGallery({ images, title }) {
         ) : (
           // Fallback placeholder images if no gallery images are provided
           <>
-            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
+            <div className="relative h-64 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                 <span className="text-gray-400 text-sm sm:text-base">Gallery Image 1</span>
               </div>
             </div>
-            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
+            <div className="relative h-64 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                 <span className="text-gray-400 text-sm sm:text-base">Gallery Image 2</span>
               </div>
             </div>
-            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
+            <div className="relative h-64 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                 <span className="text-gray-400 text-sm sm:text-base">Gallery Image 3</span>
               </div>
             </div>
-            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
+            <div className="relative h-64 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                 <span className="text-gray-400 text-sm sm:text-base">Gallery Image 4</span>
               </div>
