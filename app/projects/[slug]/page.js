@@ -1,7 +1,8 @@
 import { getProjectBySlug, getAllProjects } from '@/lib/projects';
 import Link from 'next/link';
 import ProjectCard from '@/app/components/ProjectCard';
-import { FadeIn, SlideIn, ContentSectionAnimation } from '@/components/ui/ScrollAnimations';
+import { FadeIn, ContentSectionAnimation } from '@/components/ui/ScrollAnimations';
+import { MobileFriendlySlideIn } from '@/components/ui/MobileFriendlySlideIn';
 import { ProjectGallery } from '@/app/components/ProjectGallery';
 
 export default async function ProjectPage({ params }) {
@@ -70,7 +71,7 @@ export default async function ProjectPage({ params }) {
         <div className="max-w-6xl mx-auto">
           {/* Header with titles - updated styling */}
           <div>
-            <SlideIn direction="up" distance={30} margin="-50px 0px -50px 0px">
+            <MobileFriendlySlideIn direction="up" distance={30} margin="-50px 0px -50px 0px">
               <header className="mb-16 sm:mb-24 md:mb-32 text-center flex flex-col items-center">
                 <h1 className="text-5xl md:text-7xl lg:text-[140px] font-bold text-white font-inter uppercase mb-6 sm:mb-8 md:mb-10 relative inline-block group">
                   {project.title}
@@ -82,11 +83,11 @@ export default async function ProjectPage({ params }) {
                   </p>
                 )}
               </header>
-            </SlideIn>
+            </MobileFriendlySlideIn>
             
             {/* Featured image with relative positioning, 1fr width, and 800px height */}
             {project.featuredImage && (
-              <SlideIn direction="up" distance={50} delay={0.2} margin="-50px 0px -50px 0px">
+              <MobileFriendlySlideIn direction="up" distance={50} delay={0.2} margin="-50px 0px -50px 0px">
                 <div className="relative w-full h-64 sm:h-96 md:h-[800px] rounded-3xl overflow-hidden mb-32">
                   <img 
                     src={project.featuredImage} 
@@ -94,14 +95,14 @@ export default async function ProjectPage({ params }) {
                     className="w-full h-full object-cover"
                   />
                 </div>
-              </SlideIn>
+              </MobileFriendlySlideIn>
             )}
           </div>
           
           {/* Two-column layout: tags on left, content on right */}
           <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-20 md:mb-32">
             {/* Left column: Tags with Details title */}
-            <SlideIn direction="left" className="lg:w-1/3">
+            <MobileFriendlySlideIn direction="left" className="lg:w-1/3">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 md:mb-8 text-left font-inter relative pl-4">
                 <span className="relative z-10">Details</span>
                 <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-8 md:h-10 bg-[#C7EA46] rounded-full"></span>
@@ -175,10 +176,10 @@ export default async function ProjectPage({ params }) {
                   </div>
                 )}
               </div>
-            </SlideIn>
+            </MobileFriendlySlideIn>
             
             {/* Right column: Content sections */}
-            <SlideIn direction="right" className="lg:w-2/3">
+            <MobileFriendlySlideIn direction="right" className="lg:w-2/3">
               {/* Content sections - applying new styling with Inter font, white body text, and padded section titles */}
               <div className="space-y-12 sm:space-y-16 md:space-y-24">
                 {sections.map((section, index) => (
@@ -214,7 +215,7 @@ export default async function ProjectPage({ params }) {
                   </ContentSectionAnimation>
                 ))}
               </div>
-            </SlideIn>
+            </MobileFriendlySlideIn>
           </div>
           
           {/* Gallery section - displaying actual gallery images */}
