@@ -11,9 +11,9 @@ export default function Header() {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/over-mij', label: 'Over Mij' },
+    { href: '/under-construction', label: 'Over Mij' },
     { href: '/portfolio', label: 'Portfolio' },
-    { href: '/contact', label: 'Contact' }
+    { href: '/under-construction', label: 'Contact' }
     // { href: '/drafts', label: 'Drafts' } // Uncomment this line to add drafts to navigation
   ];
 
