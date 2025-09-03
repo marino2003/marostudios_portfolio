@@ -17,6 +17,7 @@ categorie: ['UI/UX Design']
 rol: ['UI/UX Designer']
 tools: ['Figma']
 datum: ['January 2024']
+figmaUrl: "https://www.figma.com/proto/zLLDx0x9iYhzB8QyriEtb2/Visual-Interaction-Opdracht-3?node-id=1060-26930&t=ukYGv6yINRXTcQT4-1"
 ---
 
 # Introductie

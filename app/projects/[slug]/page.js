@@ -20,7 +20,8 @@ export default async function ProjectPage({ params }) {
     'categorie',
     'rol',
     'datum',
-    'tools'
+    'tools',
+    'figmaUrl'
   ]);
   
   const moreProjects = getAllProjects([
@@ -219,6 +220,30 @@ export default async function ProjectPage({ params }) {
           {/* Gallery section - displaying actual gallery images */}
           <FadeIn>
             <div className="mt-16 md:mt-32 mb-16 md:mb-32">
+              {/* Figma Prototype Button - only show if figmaUrl exists */}
+              {project.figmaUrl && (
+                <div className="flex justify-center mb-12 sm:mb-16 md:mb-24">
+                  <a 
+                    href={project.figmaUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-500 font-inter font-bold group"
+                  >
+                    <span className="border-b-2 border-white group-hover:border-transparent transition-all duration-300">
+                      View Interactive Prototype
+                    </span>
+                    <svg 
+                      className="ml-2 w-5 h-5 group-hover:-rotate-12 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </div>
+              )}
               <ProjectGallery images={project.gallery} title={project.title} />
             </div>
           </FadeIn>

@@ -16,6 +16,7 @@ categorie: ['UI/UX Design']
 rol: ['UI/UX Designer', 'Reseacher']
 tools: ['Figma']
 datum: ['24 Augustus 2025']
+figmaUrl: "https://www.figma.com/proto/DcqbZtk29A5M6O8tcZB4wt/UIUXESS?node-id=362-3400&t=ztTjkVU4f0H2GTGy-1"
 ---
 
 # Introductie
