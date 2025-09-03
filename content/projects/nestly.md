@@ -4,7 +4,7 @@ slug: "nestly"
 featured: true
 order: 1
 date: "2023-05-15"
-featuredImage: "/img/projects/sample_project/Mockup.png"
+featuredImage: "/img/projects/sample_project/1.png"
 subtitle: "Smart Shared Household Billsplitter"
 description: "Web-based educational platform that connects students and teachers with interactive tools and real-time communication"
 gallery:
